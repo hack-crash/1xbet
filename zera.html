@@ -141,7 +141,7 @@
   <body>
 
     <div class="ball-container">  
-	  <div class="ball" id="ball1">اضغط لعرض جوله الحاليه</div>
+	  <div class="ball" id="ball1">مفعل</div>
 	  <div class="ball" id="ball2">تحميل الجوله سابق</div>
 	  <div class="ball" id="ball3">تحميل الجوله سابق</div>
 
@@ -201,7 +201,7 @@
 </script>
 <script>
         var form = document.getElementById('myForm');
-        var openButton = document.getElementById('ball1');
+        var openButton = document.getElementById('ball12');
         
         openButton.onclick = function() {
             form.style.display = 'block';
@@ -262,7 +262,8 @@ new function() {
 	}
 	function send(id) {
 	document.getElementById('ball3').innerText = document.getElementById('ball2').innerText 
-	document.getElementById('ball2').innerText = id
+	document.getElementById('ball2').innerText = document.getElementById('ball1').innerText 
+	document.getElementById('ball1').innerText = id
 		}
 </script>
   </body>
