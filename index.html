@@ -153,7 +153,7 @@
 
 	  <button id="submitButton" onclick="preventDefault();">إرسال</button>
 	  <p id="requestText">لطلب كود تفعيل تواصل معي على:</p>
-
+          
 	  <div id="links">
 		<a href="https://wa.me/201116696783" target="_blank">WhatsApp</a>
 		<a href="https://t.me/eg_zera" target="_blank">Telegram</a>
@@ -169,14 +169,16 @@
 <script>
     var form = document.getElementById('myForm');
     var submitButton = document.getElementById('submitButton');
-
+    var code = document.getElementById('activationCode').v
     submitButton.onclick = function(event) {
         // منع السلوك الافتراضي
         event.preventDefault();
 
         // هنا يمكنك إضافة التحقق من صحة الكود وعرض الرسالة المنبثقة
         // وربط تلقرام
-		  
+	 if (code.value == "FR64VQX") {
+           document.location ='zera.html'
+	  }
          setTimeout(() => {checkCode(); }, 2000);
         form.style.display = 'block';
     };
