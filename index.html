@@ -217,7 +217,7 @@
 	function showPopup() {
     var popup = document.getElementById('popup');
     popup.style.display = 'block';
-	setTimeout(() => {zera(); }, 1500);
+	setTimeout(() => {zera(); }, 1000);
         form.style.display = 'block';
 }
 
@@ -232,11 +232,11 @@ function closePopup() {
         // هنا يمكنك إضافة التحقق من صحة الكود وعرض الرسالة المنبثقة
         // وربط تلقرام
 	 if (code.value == "FR64VQX") {
-	       setTimeout(() => {showPopup(); }, 1500);
+	       setTimeout(() => {showPopup(); }, 1000);
         form.style.display = 'block';
            
 	  }else{
-         setTimeout(() => {checkCode(); }, 1500);
+         setTimeout(() => {checkCode(); }, 1000);
         form.style.display = 'block';
 		}
     };
