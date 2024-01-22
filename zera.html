@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" html dir="rtl">
+  
   <head>
 
     <meta charset="UTF-8">
@@ -10,7 +11,7 @@
   #tatl {
             position: fixed;
             top: 90%;
-            left: 40%;
+            left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
             border-radius: 5px;
@@ -71,9 +72,10 @@
         }
 
         a {
-            margin: 0 10px;
+            margin: 0 2px;
             text-decoration: none;
             color: #3498db;
+			font-size: 20px;
         }
 
         #openButton {
@@ -127,9 +129,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 2;
             padding: 20px;
-            text-align: center;
+            
         }
+ .warning-text {
+            color: #e74c3c;
+            font-size: 20px;
+            margin-bottom: 20px;
+			   white-space: nowrap;
 
+        }
         #closePopup {
             position: absolute;
             top: 10px;
@@ -146,58 +154,26 @@
 	  <div class="ball" id="ball3">تحميل الجوله سابق</div>
 
     </div>
-	<form id="myForm">
-	  <span onclick="closeForm()" style="cursor: pointer; float: right;">&times;</span>
-	  <h2>أدخل كود التفعيل</h2>
-	  <input type="text" id="activationCode" placeholder="أدخل الكود">
-
-	  <button id="submitButton" onclick="preventDefault();">إرسال</button>
-	  <p id="requestText">لطلب كود تفعيل تواصل معي على:</p>
-
-	  <div id="links">
-		<a href="https://wa.me/201116696783" target="_blank">WhatsApp</a>
-		<a href="https://t.me/eg_zera" target="_blank">Telegram</a>
-	  </div>
-    </form>
-	<div id="errorPopup">
-	  <span id="closePopup" onclick="closeErrorPopup()">&times;</span>
-	  <p>الكود المدخل خاطئ. تواصل معنا على <a href="https://t.me/eg_zera" target="_blank">Telegram</a></p>
-    </div>
-	<div id="tatl">
-	  <h2>hack crash by <a href="https://t.me/eg_zera" target="_blank">@eg_zera</a></h2>
-    </div>
-<script>
-    var form = document.getElementById('myForm');
-    var submitButton = document.getElementById('submitButton');
-
-    submitButton.onclick = function(event) {
-        // منع السلوك الافتراضي
-        event.preventDefault();
-
-        // هنا يمكنك إضافة التحقق من صحة الكود وعرض الرسالة المنبثقة
-        // وربط تلقرام
-		  
-         setTimeout(() => {checkCode(); }, 2000);
-        form.style.display = 'block';
-    };
-
-    function closeForm() {
-        form.style.display = 'none';
-    }
 	
-	function checkCode() {
-	      showErrorPopup();
-        }
+	
+	<div id="tatl">
+	  <p class="warning-text">       ⚠️ في حال عدم عمل الهاك بشكل المتوقع برجاء </p>
+	  <a href="help" class="popup-button">زيارة صفحة التعليمات ❗️  </a>
+	</div>
 
-        function showErrorPopup() {
-            var popup = document.getElementById('errorPopup');
-            popup.style.display = 'block';
-        }
+	<!-- الزر الذي يفتح المنبثق -->
+	
 
-        function closeErrorPopup() {
-            var popup = document.getElementById('errorPopup');
-            popup.style.display = 'none';
-        }
+<script>
+    function showWarningPopup() {
+        var popup = document.getElementById('warningPopup');
+        popup.style.display = 'block';
+    }
+
+    function closeWarningPopup() {
+        var popup = document.getElementById('warningPopup');
+        popup.style.display = 'none';
+    }
 </script>
 <script>
         var form = document.getElementById('myForm');
@@ -221,6 +197,7 @@
   
   		
 new function() {
+showWarningPopup()
 	var ws = null;
 	var open = function() {
 		var url = 'wss://eg1xbet.com/games-frame/sockets/cafeed'

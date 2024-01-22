@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="ar" html dir="rtl">
   <head>
 
     <meta charset="UTF-8">
@@ -91,8 +92,43 @@
             color: #555;
         }
 		
-		
-		
+	  #popup {
+            display: none;
+             position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #3498db;
+            color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #popup a {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #popup #closePopup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        #activationIcon {
+            font-size: 24px;
+            color: #27ae60;
+        }
         .ball-container {
             position: relative;
             width: 300px; /* تغيير عرض الكرات المجتمعة */
@@ -163,6 +199,14 @@
 	  <span id="closePopup" onclick="closeErrorPopup()">&times;</span>
 	  <p>الكود المدخل خاطئ. تواصل معنا على <a href="https://t.me/eg_zera" target="_blank">Telegram</a></p>
     </div>
+	<!-- مربع منبثق لتنبيه الزائر -->
+	<div id="popup">
+	  <p id="activationIcon">✔️</p>
+	  <p>تم تفعيل السكربت بنجاح!</p>
+	 
+	  <span onclick="closePopup()" id="closePopup">&times;</span>
+    </div>
+	
 	<div id="tatl">
 	  <h2>hack crash by <a href="https://t.me/eg_zera" target="_blank">@eg_zera</a></h2>
     </div>
@@ -170,6 +214,17 @@
     var form = document.getElementById('myForm');
     var submitButton = document.getElementById('submitButton');
     var code = document.getElementById('activationCode')
+	function showPopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+	setTimeout(() => {zera(); }, 1500);
+        form.style.display = 'block';
+}
+
+function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
     submitButton.onclick = function(event) {
         // منع السلوك الافتراضي
         event.preventDefault();
@@ -177,12 +232,17 @@
         // هنا يمكنك إضافة التحقق من صحة الكود وعرض الرسالة المنبثقة
         // وربط تلقرام
 	 if (code.value == "FR64VQX") {
-           document.location ='zera.html'
-	  }
-         setTimeout(() => {checkCode(); }, 2000);
+	       setTimeout(() => {showPopup(); }, 1500);
         form.style.display = 'block';
+           
+	  }else{
+         setTimeout(() => {checkCode(); }, 1500);
+        form.style.display = 'block';
+		}
     };
-
+    function zera() {
+	document.location ='zera.html'
+	}
     function closeForm() {
         form.style.display = 'none';
     }
