@@ -71,7 +71,7 @@
             margin-top: 20px;
         }
 
-        a {
+        #a {
             margin: 0 2px;
             text-decoration: none;
             color: #3498db;
@@ -117,7 +117,10 @@
 		#ball1 {background-position: center;background-image: url("lok.jpg");text-align: center;font-size: 25px; top: -150px; left: 80px; width: 150px; height: 150px; } /* حجم الكرة الأولى والمسافة */
         #ball2 {background-position: center;background-image: url("crash.jpg");text-align: center;font-size: 17px; top: 10px; left: 36%; width: 100px; height: 100px; } /* حجم الكرة الثانية والمسافة */
         #ball3 {background-position: center;background-image: url("crash.jpg");text-align: center; font-size: 15px; top: 120px; left: 39%; width: 85px; height: 85px; } /* حجم الكرة الثالثة والمسافة */
-
+ #activationIcon {
+            font-size: 24px;
+            color: #FFFFFF;
+        }
         #errorPopup {
             display: none;
             position: fixed;
@@ -144,6 +147,23 @@
             right: 10px;
             cursor: pointer;
         }
+		  #popup {
+            display: none;
+             position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #3498db;
+            color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+            text-align: center;
+            font-size: 16px;
+        }
+
 </style>
   </head>
   <body>
@@ -154,17 +174,38 @@
 	  <div class="ball" id="ball3">تحميل الجوله سابق</div>
 
     </div>
-	
+	<div id="popup">
+	  <p id="activationIcon">⚠️</p>
+	  <p id="warning-text">برجاء قراء تعليمات لضمان نجاج الهاك</p>
+	  <button  onclick="window.open('help');">موفق</button>
+	  
+	  <span onclick="closePopup()" id="closePopup">&times;</span>
+    </div>
 	
 	<div id="tatl">
 	  <p class="warning-text">       ⚠️ في حال عدم عمل الهاك بشكل المتوقع برجاء </p>
-	  <a href="help" class="popup-button">زيارة صفحة التعليمات ❗️  </a>
+	  <a href="help" class="à">زيارة صفحة التعليمات ❗️  </a>
 	</div>
 
 	<!-- الزر الذي يفتح المنبثق -->
 	
 
 <script>
+  function showPopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+	setTimeout(() => {zera(); }, 1500);
+        form.style.display = 'block';
+}
+
+function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+  
+  
+  showPopup()
+  
     function showWarningPopup() {
         var popup = document.getElementById('warningPopup');
         popup.style.display = 'block';
