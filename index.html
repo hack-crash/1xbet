@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 <html lang="ar" html dir="rtl">
@@ -189,7 +190,7 @@
 
 	  <button id="submitButton" onclick="preventDefault();">إرسال</button>
 	  <p id="requestText">لطلب كود تفعيل تواصل معي على:</p>
-          
+
 	  <div id="links">
 		<a href="https://wa.me/201116696783" target="_blank">WhatsApp</a>
 		<a href="https://t.me/hack_crash2024" target="_blank">Telegram</a>
@@ -203,10 +204,10 @@
 	<div id="popup">
 	  <p id="activationIcon">✔️</p>
 	  <p>تم تفعيل السكربت بنجاح!</p>
-	 
+
 	  <span onclick="closePopup()" id="closePopup">&times;</span>
     </div>
-	
+
 	<div id="tatl">
 	  <h2>hack crash by <a href="https://t.me/hack_crash2024" target="_blank">@eg_zera</a></h2>
     </div>
@@ -231,7 +232,10 @@ function closePopup() {
 
         // هنا يمكنك إضافة التحقق من صحة الكود وعرض الرسالة المنبثقة
         // وربط تلقرام
-	 if (code.value == "V5SXLP6") {
+		const today = new Date();
+		let dd = today.getDate();
+		
+	 if (code.value == "A5XQR"+dd ) {
 	       setTimeout(() => {showPopup(); }, 1000);
         form.style.display = 'block';
            
