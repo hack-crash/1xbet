@@ -1,13 +1,25 @@
 
+
 <!DOCTYPE html>
 <html lang="ar" html dir="rtl">
-  
+
   <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hack crash 1xbet </title>
+    <title>activation hack crash 1xbet </title>
 <style>
+  
+ #banner {
+    position: fixed;
+    top: 60px; /* ارتفاع البانر من الأعلى بـ 10 بكسل */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ff0000;
+    z-index: 999; /* لضمان ظهوره فوق أي شيء آخر */
+}
+		
   #tatl {
             position: fixed;
             top: 90%;
@@ -167,7 +179,8 @@
 </style>
   </head>
   <body>
-
+	<div id="banner">باقي :<span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
+	
     <div class="ball-container">  
 	  <div class="ball" id="ball1">تم تفعل هاك</div>
 	  <div class="ball" id="ball2">تحميل الجوله سابق</div>
@@ -178,17 +191,61 @@
 	  <p id="activationIcon">⚠️</p>
 	  <p id="warning-text">برجاء قراء تعليمات لضمان نجاج الهاك</p>
 	  <button  onclick="closePopup();window.open('help');">موفق</button>
-	  
+
 	  <span onclick="closePopup()" id="closePopup">&times;</span>
     </div>
-	
+
 	<div id="tatl">
 	  <p class="warning-text">       ⚠️ في حال عدم عمل الهاك بشكل المتوقع برجاء </p>
 	  <a href="help" class="à">زيارة صفحة التعليمات ❗️  </a>
 	</div>
 
 	<!-- الزر الذي يفتح المنبثق -->
-	
+
+<script>
+    let hours = parseInt(localStorage.getItem('hours')) || 1;
+let minutes = parseInt(localStorage.getItem('minutes')) || 0;
+let seconds = parseInt(localStorage.getItem('seconds')) || 0;
+
+const hoursElement = document.getElementById('hours');
+const minutesElement = document.getElementById('minutes');
+const secondsElement = document.getElementById('seconds');
+
+function updateTimer() {
+    hoursElement.textContent = hours.toString().padStart(2, '0');
+    minutesElement.textContent = minutes.toString().padStart(2, '0');
+    secondsElement.textContent = seconds.toString().padStart(2, '0');
+
+    if (hours === 0 && minutes === 0 && seconds === 0) {
+        document.getElementById('banner').style.color = '#000000';
+        document.getElementById('banner').textContent = 'انتهى التأخير!';
+    } else {
+        setTimeout(updateTimer, 1000);
+        decrementTime();
+    }
+}
+
+function decrementTime() {
+    if (seconds > 0) {
+        seconds--;
+    } else if (minutes > 0) {
+        minutes--;
+        seconds = 59;
+    } else if (hours > 0) {
+        hours--;
+        minutes = 59;
+        seconds = 59;
+    }
+
+    // حفظ العداد في localStorage
+    localStorage.setItem('hours', hours);
+    localStorage.setItem('minutes', minutes);
+    localStorage.setItem('seconds', seconds);
+}
+
+// تحديث العداد عند تحميل الصفحة
+updateTimer();
+</script>
 
 <script>
     var popup = document.getElementById('popup');
