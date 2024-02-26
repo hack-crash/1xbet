@@ -262,7 +262,7 @@ new function() {
 	var onOpen = function() {
 		console.log('OPENED: ');
 		ws.send('{"protocol":"json","version":1}\x1e');
-        ws.send('{"arguments":["00000000-0000-0000-0000-000000000000",0,119,"ar",30,1],"invocationId":"0","target":"RegInHub2","type":1}\x1e');
+                ws.send('{"arguments":[{"activity":30,"currency":119}],"invocationId":"0","target":"Guest","type":1}\x1e');
       
 	};
 	var onClose = function() {
