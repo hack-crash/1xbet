@@ -265,12 +265,11 @@ function closePopup() {
   
   
   
-  		
-new function() {
+  	new function() {
 
 	var ws = null;
 	var open = function() {
-		var url = 'wss://eg1xbet.com/games-frame/sockets/cafeed'
+		var url = 'wss://eg1xbet.com/games-frame/sockets/crash?appGuid=00000000-0000-0000-0000-000000000000&whence=110&fcountry=66&ref=1&gr=0&lng=ar'
 		ws = new WebSocket(url);
 		ws.onopen = onOpen;
 		ws.onclose = onClose;
@@ -287,7 +286,7 @@ new function() {
 	var onOpen = function() {
 		console.log('OPENED: ');
 		ws.send('{"protocol":"json","version":1}\x1e');
-        ws.send('{"arguments":["00000000-0000-0000-0000-000000000000",0,119,"ar",30,1],"invocationId":"0","target":"RegInHub2","type":1}\x1e');
+                ws.send('{"arguments":[{"activity":30,"currency":119}],"invocationId":"0","target":"Guest","type":1}\x1e');
       
 	};
 	var onClose = function() {
@@ -297,8 +296,8 @@ new function() {
 	
 	var onMessage = function(event) {
 		const data = JSON.parse(event.data.slice(0, -1));
-            if (data.target === 'OnCoeffChange' && data.arguments[0].ic) {
-                send(data.arguments[0].cf);
+            if (data.target === 'OnCrash' ) {
+                send(data.arguments[0].f);
             }
 	};
 	
