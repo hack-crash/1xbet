@@ -107,14 +107,7 @@
             color: #555;
         }
 		
-		
-        .ball-container {
-            position: relative;
-            width: 300px; /* تغيير عرض الكرات المجتمعة */
-            height: 200px;
-        }
-  
-        .ball {
+	ball {
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -127,30 +120,8 @@
             color: #FFFFFF; /* لون الكرة أصفر فاتح */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل للكرة */
         }
-	
-ball {
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px; /* تغيير حجم الخط */
-            font-family: 'Arial', sans-serif; /* تغيير نوع الخط */
-            color: #2c3e50; /* لون النص غامق ليتناسب مع الخلفية */
-            position: absolute;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* إضافة ظل للنص */
-            color: #FFFFFF; /* لون الكرة أصفر فاتح */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل للكرة */
-        }
-#ball2 {
-background-position: center;
-background-image: url("crash.jpg");
-text-align: center;
-font-size: 17px;
-top: 60%; /* تعديل هنا لتغيير ارتفاع الكرة الثانية */
-left: 36%;
-width: 100px;
-height: 100px;
-}
+	#ball1 {background-position: center;background-image: url("lok.jpg");text-align: center;font-size: 25px; top: -150px; left: 80px; width: 150px; height: 150px; } /* حجم الكرة الأولى والمسافة */
+        #ball2 {background-position: center;background-image: url("crash.jpg");text-align: center;font-size: 17px; top: 10px; left: 36%; width: 100px; height: 100px; } /* حجم الكرة الثانية والمسافة */
 
 #ball4 {
 .element {
@@ -210,8 +181,10 @@ height: 100px;
   <body>
 	<div id="banner"><span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
 	
-        <div class="ball" id="ball4">انشاءحساب1xbetجديد</div>
+        <div class="ball-container">  
 	  <div class="ball" id="ball1">تم تفعل هاك</div>
+	  <div class="ball" id="ball2">تحميل الجوله سابق</div>
+	</div>
 <script>
     let hours = parseInt(localStorage.getItem('hours')) || 1;
 let minutes = parseInt(localStorage.getItem('minutes')) || 0;
