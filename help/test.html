@@ -108,7 +108,6 @@
         }
 		
 		
-		
         .ball-container {
             position: relative;
             width: 300px; /* تغيير عرض الكرات المجتمعة */
@@ -129,7 +128,19 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل للكرة */
         }
 	
-
+ball {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px; /* تغيير حجم الخط */
+            font-family: 'Arial', sans-serif; /* تغيير نوع الخط */
+            color: #2c3e50; /* لون النص غامق ليتناسب مع الخلفية */
+            position: absolute;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* إضافة ظل للنص */
+            color: #FFFFFF; /* لون الكرة أصفر فاتح */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل للكرة */
+        }
 #ball2 {
 background-position: center;
 background-image: url("crash.jpg");
@@ -141,15 +152,12 @@ width: 100px;
 height: 100px;
 }
 
-#ball3 {
-background-position: center;
-background-image: url("crash.jpg");
-text-align: center;
-font-size: 15px;
-top: 70%; /* تعديل هنا لتغيير ارتفاع الكرة الثالثة */
-left: 39%;
-width: 85px;
-height: 85px;
+#ball4 {
+.element {
+    position: absolute;
+    left: 5px;
+    top: 8px;
+}
 } #activationIcon {
             font-size: 24px;
             color: #FFFFFF;
@@ -202,8 +210,8 @@ height: 85px;
   <body>
 	<div id="banner"><span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
 	
-        <div class="ball" id="ball1">انشاءحساب1xbetجديد</div>
-	  <div class="ball" id="ball2">تم تفعل هاك</div>
+        <div id="ball4">انشاءحساب1xbetجديد</div>
+	  <div class="ball1" id="ball2">تم تفعل هاك</div>
 <script>
     let hours = parseInt(localStorage.getItem('hours')) || 1;
 let minutes = parseInt(localStorage.getItem('minutes')) || 0;
