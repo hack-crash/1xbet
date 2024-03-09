@@ -107,7 +107,7 @@
             color: #555;
         }
 		
-	ball {
+	.ball {
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -181,10 +181,9 @@
   <body>
 	<div id="banner"><span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
 	
-        <div class="ball-container">  
+        
 	  <div class="ball" id="ball1">تم تفعل هاك</div>
-	  <div class="ball" id="ball2">تحميل الجوله سابق</div>
-	</div>
+	  
 <script>
     let hours = parseInt(localStorage.getItem('hours')) || 1;
 let minutes = parseInt(localStorage.getItem('minutes')) || 0;
