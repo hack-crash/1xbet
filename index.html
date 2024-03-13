@@ -231,19 +231,30 @@ function closePopup() {
         // منع السلوك الافتراضي
         event.preventDefault();
 
-        // هنا يمكنك إضافة التحقق من صحة الكود وعرض الرسالة المنبثقة
-        // وربط تلقرام
-		const today = new Date();
-		let dd = today.getDate();
-		
-	 if (code.value == "A5XQR"+dd ) {
+      var currentDate = new Date();
+var day = currentDate.getDate();
+var hours = currentDate.getHours();
+
+
+for (let i of [1,2,3,4,5]) {
+var textToHash = day+hours+i;
+var buffer = new TextEncoder().encode(textToHash);
+crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
+  var hashArray = Array.from(new Uint8Array(hashBuffer));
+  var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+  console.log(hashHex);
+  
+  if (code.value == hashHex ) {
 	       setTimeout(() => {showPopup(); }, 1000);
         form.style.display = 'block';
-           
-	  }else{
-         setTimeout(() => {checkCode(); }, 1000);
-        form.style.display = 'block';
-		}
+   }
+}).catch(function(error) {
+  console.error("حدث خطأ:", error);
+});
+
+setTimeout(() => {checkCode(); }, 1000);
+form.style.display = 'block';
+
     };
     function zera() {
 	document.location ='zera.html'
