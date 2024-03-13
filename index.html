@@ -219,6 +219,13 @@
 	function showPopup() {
    
 }
+function formatAndCapitalize(text) {
+    const first20Chars = text.slice(0, 20);
+    const capitalizedText = first20Chars.toUpperCase();
+    const formattedText = capitalizedText.match(/.{1,5}/g).join('-');
+    return formattedText;
+}
+
 
 function closePopup() {
     var popup = document.getElementById('popup');
@@ -242,7 +249,7 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
   console.log(hashHex);
   var code = document.getElementById('activationCode')
-  if (code.value == hashHex ) {
+  if (code.value == formatAndCapitalize(hashHex) ) {
 	       setTimeout(() => {
      var popup = document.getElementById('popup');
     popup.style.display = 'block';
