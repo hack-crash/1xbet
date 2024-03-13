@@ -48,9 +48,9 @@
 	
   </body>
 <script>
-    let hours = parseInt(localStorage.getItem('hours')) || 1;
-let minutes = parseInt(localStorage.getItem('minutes')) || 0;
-let seconds = parseInt(localStorage.getItem('seconds')) || 0;
+let hours = 0; // لا داعي لتأخير الساعات
+let minutes = 10; // تعيين التأخير إلى 10 دقائق
+let seconds = 0;
 
 const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
@@ -76,10 +76,6 @@ function decrementTime() {
     } else if (minutes > 0) {
         minutes--;
         seconds = 59;
-    } else if (hours > 0) {
-        hours--;
-        minutes = 59;
-        seconds = 59;
     }
 
     // حفظ العداد في localStorage
@@ -88,7 +84,7 @@ function decrementTime() {
     localStorage.setItem('seconds', seconds);
 }
 
-// تحديث العداد عند تحميل الصفحة
+// استدعاء الدالة للبدء في التحديث
 updateTimer();
 </script>
 <script>
