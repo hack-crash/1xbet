@@ -216,9 +216,7 @@
     var form = document.getElementById('myForm');
     var submitButton = document.getElementById('submitButton');
     
-	function showPopup() {
-   
-}
+	
 function formatAndCapitalize(text) {
     const first20Chars = text.slice(0, 20);
     const capitalizedText = first20Chars.toUpperCase();
@@ -231,7 +229,15 @@ function closePopup() {
     var popup = document.getElementById('popup');
     popup.style.display = 'none';
 }
-	
+	function showPopup() {
+        setTimeout(() => {
+     var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+	setTimeout(() => {zera(); }, 1000);
+        form.style.display = 'block';
+	       }, 1000);
+        form.style.display = 'block';
+}
     submitButton.onclick = function(event) {
         // منع السلوك الافتراضي
         event.preventDefault();
@@ -250,13 +256,7 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   console.log(hashHex);
   var code = document.getElementById('activationCode')
   if (code.value == formatAndCapitalize(hashHex) ) {
-	       setTimeout(() => {
-     var popup = document.getElementById('popup');
-    popup.style.display = 'block';
-	setTimeout(() => {zera(); }, 1000);
-        form.style.display = 'block';
-	       }, 1000);
-        form.style.display = 'block';
+	  showPopup(); 
    }
 }).catch(function(error) {
   console.error("حدث خطأ:", error);
