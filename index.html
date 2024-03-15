@@ -270,7 +270,15 @@ function closePopup() {
         form.style.display = 'block';
 }
 
-
+function showPopupadmin() {
+        setTimeout(() => {
+     var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+	setTimeout(() => {admin(); }, 1000);
+        form.style.display = 'block';
+	       }, 1000);
+        form.style.display = 'block';
+}
 
 	
     function preventDefault() {
@@ -298,9 +306,7 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   console.log(hashHex);
   var code = document.getElementById('activationCode')
   if (code.value == formatAndCapitalize(hashHex) ) {
-    localStorage.setItem('hours', 24);
-    
-	  showPopup(); 
+	  showPopupadmin(); 
    }
 }).catch(function(error) {
   console.error("حدث خطأ:", error);
@@ -309,21 +315,7 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
 
 
 
-var textToHash = day+""+hours;
-var buffer = new TextEncoder().encode(textToHash);
-crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
-  var hashArray = Array.from(new Uint8Array(hashBuffer));
-  var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-  console.log(hashHex);
-  var code = document.getElementById('activationCode')
-  if (code.value == formatAndCapitalize(hashHex) ) {
-    localStorage.setItem('hours', 1);
-	  showPopup(); 
-   }
-}).catch(function(error) {
-  console.error("حدث خطأ:", error);
-})
-    
+
 
 for (let i of [1,2,3,4,5]) {
 var textToHash = day+""+hours+""+i;
@@ -334,8 +326,6 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   console.log(hashHex);
   var code = document.getElementById('activationCode')
   if (code.value == formatAndCapitalize(hashHex) ) {
-  localStorage.setItem('hours', 0);
-    localStorage.setItem('minutes', 10);
 	  showPopup(); 
    }
 }).catch(function(error) {
@@ -348,6 +338,9 @@ form.style.display = 'block';
 	}
     function zera() {
 	document.location ='zera.html'
+	}
+	function admin() {
+	document.location ='admin.html'
 	}
     function closeForm() {
         form.style.display = 'none';
