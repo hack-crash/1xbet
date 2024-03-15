@@ -300,8 +300,7 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   console.log(hashHex);
   var code = document.getElementById('activationCode')
   if (code.value == formatAndCapitalize(hashHex) ) {
-  localStorage.setItem('hours', 0);
-    localStorage.setItem('minutes', 10);
+  
 	  showPopup(); 
    }
 }).catch(function(error) {
