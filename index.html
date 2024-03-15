@@ -295,11 +295,12 @@ var buffer = new TextEncoder().encode(textToHash);
 crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   var hashArray = Array.from(new Uint8Array(hashBuffer));
   var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-  console.log(hashHex);
+  alert(hashHex);
+   
   var code = document.getElementById('activationCode')
   if (code.value == formatAndCapitalize(hashHex) ) {
     localStorage.setItem('hours', 24);
-    
+    alert(day); 
 	  showPopup(); 
    }
 }).catch(function(error) {
@@ -314,7 +315,7 @@ var buffer = new TextEncoder().encode(textToHash);
 crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   var hashArray = Array.from(new Uint8Array(hashBuffer));
   var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-  console.log(hashHex);
+  
   var code = document.getElementById('activationCode')
   if (code.value == formatAndCapitalize(hashHex) ) {
     localStorage.setItem('hours', 1);
