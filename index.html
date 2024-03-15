@@ -173,6 +173,23 @@
             right: 10px;
             cursor: pointer;
         }
+		
+	
+.buy-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #45a049;
+}
+		
 </style>
   </head>
   <body>
@@ -187,24 +204,37 @@
 	  <span onclick="closeForm()" style="cursor: pointer; float: right;">&times;</span>
 	  <h2>أدخل كود التفعيل</h2>
 	  <input type="text" id="activationCode" placeholder="أدخل الكود">
-
+	 <div id="links">
 	  <button id="submitButton" onclick="preventDefault();">إرسال</button>
-	  <p id="requestText">لطلب كود تفعيل تواصل معي على:</p>
+	  	</div>
 
+ <p id="requestText>">لطلب كود تفعيل تواصل معي على:</p>
+	  
 	  <div id="links">
-		<a href="https://wa.me/201116696783" target="_blank">WhatsApp</a>
-		<a href="https://t.me/Thanos_200" target="_blank">Telegram</a>
+		<a href="https://hack-crash.github.io/1xbet/pay/" target="_blank">شراء اون لاين</a>
+			<a href="https://t.me/Thanos_200" target="_blank">Telegram</a>
 	  </div>
     </form>
 	<div id="errorPopup">
 	  <span id="closePopup" onclick="closeErrorPopup()">&times;</span>
-	  <p>الكود المدخل خاطئ. تواصل معنا على <a href="" target="_blank">Telegram</a></p>
+	  
+	  <p>الكود المدخل خاطئ. ❌</p>
+	  
+	  <h4>اختر الباقة: احصل علي خصم 50%</h4>
+		<br>
+	  <div class="container">
+		<a href="https://hack-crash.github.io/1xbet/pay/" class="buy-button">اشترِ الآن</a>	
+		</div>
     </div>
+	
+	
+	
+	
 	<!-- مربع منبثق لتنبيه الزائر -->
 	<div id="popup">
 	  <p id="activationIcon">✔️</p>
 	  <p>تم تفعيل السكربت بنجاح!</p>
-           <p>الهاك يعمل مع حسابات1xbet الجديدفقط</p>
+	  <p>الهاك يعمل مع حسابات1xbet الجديدفقط</p>
 	  <span onclick="closePopup()" id="closePopup">&times;</span>
 	  <button  onclick="closePopup();window.open('zera.html');">موفق</button>
     </div>
@@ -238,7 +268,19 @@ function closePopup() {
 	       }, 1000);
         form.style.display = 'block';
 }
-    submitButton.onclick = function(event) {
+
+
+
+	
+    function preventDefault() {
+        // منع السلوك الافتراضي هنا
+    }
+
+    function openNewPage() {
+        window.open('https://example.com', '_blank');
+    }
+	
+submitButton.onclick = function(event) {
         // منع السلوك الافتراضي
         event.preventDefault();
 
