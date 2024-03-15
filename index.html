@@ -290,41 +290,6 @@ var day = currentDate.getDate();
 var hours = currentDate.getHours();
 
 
-var textToHash = day;
-var buffer = new TextEncoder().encode(textToHash);
-crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
-  var hashArray = Array.from(new Uint8Array(hashBuffer));
-  var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-  alert(hashHex);
-   
-  var code = document.getElementById('activationCode')
-  if (code.value == formatAndCapitalize(hashHex) ) {
-    localStorage.setItem('hours', 24);
-    alert(day); 
-	  showPopup(); 
-   }
-}).catch(function(error) {
-  console.error("حدث خطأ:", error);
-})
-    
-
-
-
-var textToHash = day+""+hours;
-var buffer = new TextEncoder().encode(textToHash);
-crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
-  var hashArray = Array.from(new Uint8Array(hashBuffer));
-  var hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-  
-  var code = document.getElementById('activationCode')
-  if (code.value == formatAndCapitalize(hashHex) ) {
-    localStorage.setItem('hours', 1);
-	  showPopup(); 
-   }
-}).catch(function(error) {
-  console.error("حدث خطأ:", error);
-})
-    
 
 for (let i of [1,2,3,4,5]) {
 var textToHash = day+""+hours+""+i;
