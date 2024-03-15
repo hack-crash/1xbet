@@ -10,14 +10,22 @@ def format_and_capitalize(text):
     formatted_text = '-'.join([capitalized_text[i:i+5] for i in range(0, len(capitalized_text), 5)])
     return formatted_text
 
+text_to_hash = str(day)
+hash_object = hashlib.sha256()
+hash_object.update(text_to_hash.encode('utf-8'))
+hashed_text = format_and_capitalize(hash_object.hexdigest())
+print("admin kay  "+str(day) +" > " + hashed_text+'\n')
+
+
+
 for i in range(1, 6):
-	text_to_hash = str(day+hours+i)
+	text_to_hash = str(day)+""+str(hours)+""+str(i)
 	hash_object = hashlib.sha256()
 	hash_object.update(text_to_hash.encode('utf-8'))
 	hashed_text = format_and_capitalize(hash_object.hexdigest())
-	print(hashed_text+'\n')
+	print("kay " +hashed_text+'\n')
 
-print('day '+str(day) +' hours '+ str(hours))
+#print('day '+str(day) +' hours '+ str(hours))
 
 
 
