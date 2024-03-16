@@ -24,7 +24,7 @@
 			color: #ffffff;
 			font-size: 34px;
         }
-  #banner {
+ #banner {
     position: fixed;
     top: 60px; /* ارتفاع البانر من الأعلى بـ 10 بكسل */
     left: 50%;
@@ -63,10 +63,12 @@ function updateTimer() {
 
     if (hours === 0 && minutes === 0 && seconds === 0) {
         document.getElementById('banner').style.color = '#000000';
-        document.getElementById('banner').textContent = 'انتهى التأخير!';
+        document.getElementById('banner').textContent = 'انتهى الوقت ';
+	ws.onclose; 
     } else {
         setTimeout(updateTimer, 1000);
         decrementTime();
+	open(); 
     }
 }
 
@@ -92,7 +94,6 @@ updateTimer();
   
   
   		
-new function() {
 
 	var ws = null;
 	var open = function() {
@@ -131,11 +132,11 @@ new function() {
 	var onError = function(event) {
 		alert(event.data);
 	}
-	open()
+	
 	}
 	function send(id) {
 	document.getElementById('topSection').innerText = id
-		}
+		
 </script>
   </body>
 
