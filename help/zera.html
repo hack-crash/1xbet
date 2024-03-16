@@ -96,8 +96,8 @@ new function() {
 	
 	
 let hours = 0; // لا داعي لتأخير الساعات
-let minutes = 0; // تعيين التأخير إلى 10 دقائق
-let seconds = 10;
+let minutes = 10; // تعيين التأخير إلى 10 دقائق
+let seconds = 00;
 
 const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
@@ -111,6 +111,7 @@ function updateTimer() {
     if (hours === 0 && minutes === 0 && seconds === 0) {
         document.getElementById('banner').style.color = '#000000';
         document.getElementById('banner').textContent = 'انتهى الوقت ';
+	 document.getElementById('topSection').innerText = "انتهي الهاك"; 
 	    close();
     } else {
         setTimeout(updateTimer, 1000);
