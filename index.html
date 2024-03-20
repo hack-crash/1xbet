@@ -338,7 +338,7 @@ crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
 
 
 
-var textToHash = day+"eg";
+var textToHash = "eg";
 var buffer = new TextEncoder().encode(textToHash);
 crypto.subtle.digest('SHA-256', buffer).then(function(hashBuffer) {
   var hashArray = Array.from(new Uint8Array(hashBuffer));
